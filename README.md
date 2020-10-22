@@ -1,21 +1,21 @@
 # diffing-history
 
-A reusable Java implementation of Undo/Redo functionality using State Diffs.
+A reusable Java implementation of Undo/Redo functionality using [State Diffs](https://odoepner.wordpress.com/2020/10/22/undo-redo-in-java-using-protostuff-serialization-and-binary-diffs/).
 
-It uses the following Open Source libraries:
+It uses these Open Source libraries:
 
-- Protostuff for object graph serialization using runtime schema
-- JavaxDelta for binary diffing and patching
+- [Protostuff](https://github.com/protostuff/protostuff) for object graph serialization using runtime schema
+- [JavaxDelta](https://github.com/NitorCreations/javaxdelta) for binary diffing and patching
 
-It provides the following features:
+It provides these features:
 
 - Unlimited Undo and Redo
-- Can handle any type of Java objects
+- Can handle any type of Java object graphs
 - Straightforward type-safe API
 - Supports stack size listeners
 - Gzip compression for the serialized current state
 
-It is Open Source under the Unlicense.
+It is Open Source under [the Unlicense](LICENSE).
 
 ## Usage 
 
