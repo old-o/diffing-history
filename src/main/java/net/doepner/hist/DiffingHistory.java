@@ -69,35 +69,26 @@ public final class DiffingHistory<T> implements History<T> {
 
 	@Override
 	public T undo() {
-		final byte[] undoDiff = undoDiffStack.pollFirst();
-		if (isNull(undoDiff)) {
-			throw new IllegalStateException("History is empty. Nothing to undo!");
-		}
-		requireNonNull(compressedSnapshot);
-		final byte[] current = compressor.uncompress(compressedSnapshot);
-		final byte[] previous = patcher.patch(current, undoDiff);
-		final byte[] redoDiff = patcher.diff(previous, current);
-		redoDiffStack.push(redoDiff);
-		return updateSnapshot(previous);
+		return applyPatchAndPushReverse(undoDiffStack, "undo", redoDiffStack);
 	}
 
 	@Override
 	public T redo() {
-		final byte[] redoDiff = redoDiffStack.pollFirst();
-		if (isNull(redoDiff)) {
-			throw new IllegalStateException("Redo stack is empty. Nothing to redo!");
-		} 
-		requireNonNull(compressedSnapshot);
-		final byte[] current = compressor.uncompress(compressedSnapshot);
-		final byte[] next = patcher.patch(current, redoDiff);
-		final byte[] undoDiff = patcher.diff(next, current);
-		undoDiffStack.push(undoDiff);
-		return updateSnapshot(next);
+		return applyPatchAndPushReverse(redoDiffStack, "redo", undoDiffStack);
 	}
 
-	private T updateSnapshot(byte[] snapshot) {
-		compressedSnapshot = compressor.compress(snapshot);
-		final T object = serializer.deserialize(new ByteArrayInputStream(snapshot));
+	private T applyPatchAndPushReverse(Deque<byte[]> diffStack, String action, Deque<byte[]> reverseDiffStack) {
+		final byte[] diff = diffStack.pollFirst();
+		if (isNull(diff)) {
+			throw new IllegalStateException(String.format("The %s stack is empty. Nothing to %s!", action, action));
+		}
+		requireNonNull(compressedSnapshot);
+		final byte[] current = compressor.uncompress(compressedSnapshot);
+		final byte[] changed = patcher.patch(current, diff);
+		final byte[] reverseDiff = patcher.diff(changed, current);
+		reverseDiffStack.push(reverseDiff);
+		compressedSnapshot = compressor.compress(changed);
+		final T object = serializer.deserialize(new ByteArrayInputStream(changed));
 		notifySizeChanged();
 		return object;
 	}
