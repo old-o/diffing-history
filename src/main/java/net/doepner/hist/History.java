@@ -3,7 +3,7 @@ package net.doepner.hist;
 import java.util.function.IntConsumer;
 
 /**
- * Manages a stack of serialized objects (snapshots) to support reverting to earlier snapshots
+ * Undo/Redo history
  */
 public interface History<T> {
 
