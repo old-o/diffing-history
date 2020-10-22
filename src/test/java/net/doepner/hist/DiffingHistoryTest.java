@@ -48,10 +48,7 @@ public final class DiffingHistoryTest {
 	}
 
 	private void assertDeepEquals(Object o1, Object o2) {
-		assertTrue(EqualsBuilder.reflectionEquals(o1, o2, 
-												  false /* testTransients */, 
-												  null /* reflectUpToClass */, 
-												  true /* testRecursive */));
+		assertTrue(EqualsBuilder.reflectionEquals(o1, o2, /* testTransients */ false, /* reflectUpToClass */ null, /* testRecursive */ true));
 	}
 
 	public TestData1 getOriginal() {
