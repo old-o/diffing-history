@@ -1,6 +1,6 @@
 # diffing-history
 
-A reusable Java implementation of Undo/Redo functionality using State Diffs.
+A reusable Java implementation of Undo/Redo functionality using [State Diffs](https://odoepner.wordpress.com/2020/10/22/undo-redo-in-java-using-protostuff-serialization-and-binary-diffs/).
 
 It uses the following Open Source libraries:
 
