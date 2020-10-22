@@ -22,3 +22,5 @@ It is Open Source under the Unlicense.
 The main API is the [History](src/main/java/net/doepner/hist/History.java) interface.
 
 Create an instance of [DiffingHistory](src/main/java/net/doepner/hist/DiffingHistory) to get started.
+
+The [DiffingHistoryTest](src/main/java/net/doepner/hist/DiffingHistoryTest) calls all History methods and illustrates the API.
