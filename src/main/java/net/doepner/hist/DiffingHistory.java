@@ -16,7 +16,7 @@ import java.util.function.IntConsumer;
 import java.util.logging.Logger;
 
 /**
- * Undo history using a stack of binary diffs to keep memory footprint small
+ * Undo/Redo history using stacks of binary diffs to keep memory footprint small
  */
 public final class DiffingHistory<T> implements History<T> {
 	
