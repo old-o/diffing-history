@@ -4,8 +4,8 @@ A reusable Java implementation of Undo/Redo functionality using State Diffs.
 
 It uses the following Open Source libraries:
 
-- Protostuff for object graph serialization using runtime schema
-- JavaxDelta for binary diffing and patching
+- [Protostuff](https://github.com/protostuff/protostuff) for object graph serialization using runtime schema
+- [JavaxDelta](https://github.com/NitorCreations/javaxdelta) for binary diffing and patching
 
 It provides the following features:
 
