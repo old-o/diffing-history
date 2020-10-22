@@ -57,11 +57,11 @@ public final class DiffingHistoryTest {
 	}
 
 	public TestData1 getOriginal() {
-		return new TestData1(1, ONE, new TestData2("blah-di-blah"));
+		return new TestData1(1, ONE, new TestData2("blah"));
 	}
 
 	public TestData1 getModified() {
-		return new TestData1(2, TWO, new TestData2("blah-di-blah"), new TestData2("blub"));
+		return new TestData1(2, TWO, new TestData2("blah"), new TestData2("blub"));
 	}
 
 	private void verifyStackSizes(int expectedUndoStackSize, int expectedRedoStackSize) {
