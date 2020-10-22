@@ -19,6 +19,8 @@ It is Open Source under the Unlicense.
 
 ## Usage 
 
+Currently this project is meant for cloning on github, or copy/pasting the code, not yet as a library on Maven Central.
+
 The main API is the [History](src/main/java/net/doepner/hist/History.java) interface.
 
 Create an instance of [DiffingHistory](src/main/java/net/doepner/hist/DiffingHistory) to get started.
