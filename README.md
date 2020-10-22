@@ -10,7 +10,7 @@ It uses these Open Source libraries:
 It provides these features:
 
 - Unlimited Undo and Redo
-- Can handle any type of Java objects
+- Can handle any type of Java object graphs
 - Straightforward type-safe API
 - Supports stack size listeners
 - Gzip compression for the serialized current state
