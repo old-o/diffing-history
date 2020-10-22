@@ -23,6 +23,6 @@ Currently this project is meant for cloning on github, or copy/pasting the code,
 
 The main API is the [History](src/main/java/net/doepner/hist/History.java) interface.
 
-Create an instance of [DiffingHistory](src/main/java/net/doepner/hist/DiffingHistory) to get started.
+Create an instance of [DiffingHistory](src/main/java/net/doepner/hist/DiffingHistory.java) to get started.
 
-The [DiffingHistoryTest](src/test/java/net/doepner/hist/DiffingHistoryTest) calls all History methods and illustrates the API.
+The [DiffingHistoryTest](src/test/java/net/doepner/hist/DiffingHistoryTest.java) calls all History methods and illustrates the API.
