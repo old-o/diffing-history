@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -19,10 +20,14 @@ public final class DiffingHistoryTest {
 	private int undoStackSize;
 	private int redoStackSize;
 
-	@Test
-	public void test() {
+	@BeforeEach
+	public void setUp() {
 		history.addUndoStackSizeListener(n -> undoStackSize = n);
 		history.addRedoStackSizeListener(n -> redoStackSize = n);
+	}
+
+	@Test
+	public void test() {
 		verifyStackSizes(0, 0);
 		
 		final TestData1 original = getOriginal();
