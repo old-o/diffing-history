@@ -15,7 +15,7 @@ It provides these features:
 - Supports stack size listeners
 - Gzip compression for the serialized current state
 
-It is Open Source under the Unlicense.
+It is Open Source under [the Unlicense](LICENSE).
 
 ## Usage 
 
