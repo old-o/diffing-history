@@ -9,7 +9,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
- * Zip/unzip byte arrays using Gzip or Bzip
+ * (Un)compress byte arrays using Gzip
  */
 public final class Compressor {
 	
