@@ -25,4 +25,4 @@ The main API is the [History](src/main/java/net/doepner/hist/History.java) inter
 
 Create an instance of [DiffingHistory](src/main/java/net/doepner/hist/DiffingHistory) to get started.
 
-The [DiffingHistoryTest](src/main/java/net/doepner/hist/DiffingHistoryTest) calls all History methods and illustrates the API.
+The [DiffingHistoryTest](src/test/java/net/doepner/hist/DiffingHistoryTest) calls all History methods and illustrates the API.
