@@ -4,9 +4,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Implementors of this class can serialize objects to and from xml strings.
- * <p>
- * Used primarily by the AppletMessageSender, NonNetworkMessageSender and the AppletServlet.
+ * Object graph serialization from/to byte arrays or byte stream
  */
 public interface Serializer<T> {
 	
