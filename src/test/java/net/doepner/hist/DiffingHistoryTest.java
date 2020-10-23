@@ -47,9 +47,11 @@ public final class DiffingHistoryTest {
 		final TestData1 redone = history.redo();
 		verifyStackSizes(1, 0);
 		assertDeepEquals(changed, redone);
+		assertTrue(history.hasUndoableChanges());
 		
 		history.resetTo(original);
 		verifyStackSizes(0, 0);
+		assertFalse(history.hasUndoableChanges());
 	}
 
 	private void assertDeepEquals(Object o1, Object o2) {
